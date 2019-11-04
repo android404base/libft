@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:14:37 by ydag           #+#    #+#                */
-/*   Updated: 2019/10/31 19:46:37 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/04 16:56:01 by ydag          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdlib.h>
 
 # define FT_MIN(A, B) (((A) < (B)) ? (A) : (B))
 # define FT_MAX(A, B) (((A) > (B)) ? (A) : (B))
@@ -44,5 +45,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_atoi(const char *str);
+int		ft_isspace(int c);
+void	*ft_calloc(size_t num, size_t size);
 
 #endif
