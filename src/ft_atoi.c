@@ -6,18 +6,12 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 14:08:13 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/04 16:01:38 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/04 15:16:53 by ydag          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int		ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
 int		check_overflow(long res, const char *str, int i, int sign)
 {
 	long	border;
@@ -44,8 +38,7 @@ int		ft_atoi(const char *str)
 	sign = 1;
 	if (*str == 0)
 		return (0);
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
+	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		sign = 1 - 2 * (str[i++] == '-');
@@ -55,20 +48,10 @@ int		ft_atoi(const char *str)
 		{
 			if (ft_isdigit(str[i]) == 0)
 				return (res * sign);
-			res = res * 10 + str[i] - '0';
-			i++;
+			res = res * 10 + str[i++] - '0';
 		}
 		else
 			return (check_overflow(res, str, i, sign));
 	}
 	return ((int)res * sign);
-}
-
-int main() 
-{ 
-    char str[] = "21474545454545454545834647"; 
-    int val = ft_atoi(str); 
-	 int val2 = atoi(str); 
-    printf("%d - %d", val,val2); 
-    return 0; 
 }

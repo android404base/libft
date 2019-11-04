@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:14:37 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/04 16:56:01 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/04 17:27:29 by ydag          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 int		ft_isspace(int c);
 void	*ft_calloc(size_t num, size_t size);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strcpy(char *dst, const char *src);
 
 #endif
