@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:14:37 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/07 16:52:29 by macbookpro    ########   odam.nl         */
+/*   Updated: 2019/11/07 17:09:19 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ char	**ft_split(char const *s, char c);
 int		*ft_wordsizes(char *s, int word_counts, char c);
 int		ft_wrdcntr(char *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
