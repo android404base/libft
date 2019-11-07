@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:14:37 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/04 17:27:29 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/07 15:21:38 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,11 @@ int		ft_isspace(int c);
 void	*ft_calloc(size_t num, size_t size);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dst, const char *src);
+char	**ft_build(char *s, int word_counts, char c);
+char	*ft_findword(char *s, char c, int n);
+char	**ft_free_all(char **s, int i);
+char	**ft_split(char const *s, char c);
+int		*ft_wordsizes(char *s, int word_counts, char c);
+int		ft_wrdcntr(char *s, char c);
 
 #endif
