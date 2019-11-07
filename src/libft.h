@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:14:37 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/07 17:09:19 by macbookpro    ########   odam.nl         */
+/*   Updated: 2019/11/07 19:42:57 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define FT_MIN(A, B) (((A) < (B)) ? (A) : (B))
 # define FT_MAX(A, B) (((A) > (B)) ? (A) : (B))
@@ -58,5 +59,9 @@ int		*ft_wordsizes(char *s, int word_counts, char c);
 int		ft_wrdcntr(char *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 
 #endif
