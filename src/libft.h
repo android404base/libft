@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:14:37 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/07 19:42:57 by macbookpro    ########   odam.nl         */
+/*   Updated: 2019/11/09 14:07:48 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@
 # define FT_MAX(A, B) (((A) > (B)) ? (A) : (B))
 
 # define FT_ABS(X) (((X) < 0) ? (-(X)) : (X))
+
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;	
+}					t_list;
 
 void	*ft_bzero(void *s, size_t n);
 int		ft_isalnum(int arg);
@@ -63,5 +69,14 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
+t_list  *ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **alst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list  *ft_lstlast(t_list *lst);
+void    ft_lstadd_back(t_list **alst, t_list *new);
+void	ft_lstdelone(t_list *alst, void (*del)(void *));
+void    ft_lstclear(t_list **lst, void (*del)(void *));
+void    ft_lstiter(t_list *lst, void (*f)(void *));
+t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
