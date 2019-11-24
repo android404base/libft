@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 17:37:15 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/04 13:07:32 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/23 13:05:08 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (unsigned const char *)src;
-	while (n-- && (dest != 0 || src != 0))
-		*d++ = *s++;
+	while (n && (dest != 0 || src != 0))
+	{
+		*d = *s;
+		d++;
+		s++;
+		n--;
+	}
 	return (dest);
 }

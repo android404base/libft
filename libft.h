@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:14:37 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/11 14:37:08 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/23 12:58:02 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 # define LIBFT_H
 
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -59,12 +58,8 @@ int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
-char			**ft_build(char *s, int word_counts, char c);
-char			*ft_findword(char *s, char c, int n);
 char			**ft_free_all(char **s, int i);
 char			**ft_split(char const *s, char c);
-int				*ft_wordsizes(char *s, int word_counts, char c);
-int				ft_wrdcntr(char *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_putchar_fd(char c, int fd);
@@ -75,6 +70,8 @@ t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
+char			*ft_strdup(const char *s);
+char			*ft_strtrim(char const *s1, char const *set);
 void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstdelone(t_list *alst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));

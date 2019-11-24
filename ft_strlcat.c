@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 13:39:09 by ydag           #+#    #+#                */
-/*   Updated: 2019/10/30 13:46:13 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/23 13:32:11 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	{
 		dst += d_size;
 		size -= d_size;
-		while (*src && size-- > 1)
-			*dst++ = *src++;
+		while (*src && size > 1)
+		{
+			*dst = *src;
+			dst++;
+			src++;
+			size--;
+		}
 		*dst = '\0';
 	}
 	return (out);

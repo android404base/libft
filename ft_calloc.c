@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 16:07:09 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/04 16:55:49 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/23 13:02:47 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void	*ft_calloc(size_t num, size_t size)
 	if (str == 0)
 		return (0);
 	while (i < num * size)
-		((char*)str)[i++] = 0;
+	{
+		((char*)str)[i] = 0;
+		i++;
+	}
 	return (str);
 }

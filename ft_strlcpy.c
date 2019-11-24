@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 13:18:27 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/04 13:39:03 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/23 13:33:34 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	s = (char *)src;
 	e = d + size;
 	while (*s != '\0' && d < e)
-		*d++ = *s++;
+	{
+		*d = *s;
+		d++;
+		s++;
+	}
 	if (d < e)
 		*d = 0;
 	else if (size > 0)

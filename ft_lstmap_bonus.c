@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstmap.c                                        :+:    :+:            */
+/*   ft_lstmap_bonus.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/11 14:29:35 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/11 16:29:41 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/23 13:46:30 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*node;
-	t_list	*root;
-	t_list	*tmp;
+	t_list	*new;
+	t_list	*head;
+	t_list	*next;
 
-	root = NULL;
-	if (lst != NULL)
+	if (!lst || !f || !del)
+		return (0);
+	head = ft_lstnew(f(lst->content));
+	lst = lst->next;
+	new = head;
+	if (!head)
+		return (0);
+	while (lst)
 	{
-		root = ft_lstnew((*f)(lst->content));
-		lst = lst->next;
-		node = root;
-		while (lst != NULL)
+		next = ft_lstnew(f(lst->content));
+		if (!next)
 		{
-			tmp = ft_lstnew((*f)(lst->content));
-			if (!tmp)
-			{
-				ft_lstclear(&node, del);
-				return (NULL);
-			}
-			node->next = tmp;
-			node = node->next;
-			lst = lst->next;
+			ft_lstclear(&head, del);
+			return (0);
 		}
-		return (root);
+		new->next = next;
+		new = next;
+		lst = lst->next;
 	}
-	return (NULL);
+	return (head);
 }

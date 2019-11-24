@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 17:18:17 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/04 17:28:11 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/14 17:50:32 by ydag          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*d;
 
-	d = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	d = malloc((ft_strlen(s)) * sizeof(*d) + 1);
 	if (d == 0)
 		return (0);
 	d = ft_strcpy(d, s);

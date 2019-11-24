@@ -6,22 +6,16 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/11 14:26:34 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/12 13:04:45 by macbookpro    ########   odam.nl         */
+/*   Updated: 2019/11/23 13:44:08 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *alst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list *tmp;
-
-	tmp = NULL;
-	if (alst)
-	{
-		tmp = alst->next;
-		del(alst->content);
-		alst->next = NULL;
-		free(alst);
-	}
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

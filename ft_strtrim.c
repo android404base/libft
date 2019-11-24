@@ -6,7 +6,7 @@
 /*   By: ydag <ydag@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/06 14:08:59 by ydag           #+#    #+#                */
-/*   Updated: 2019/11/11 17:29:27 by ydag          ########   odam.nl         */
+/*   Updated: 2019/11/23 13:35:14 by macbookpro    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,11 @@ char		*ft_strtrim(char const *s1, char const *set)
 	if ((result = make_place((finish > start) ? (finish - start) : 0)))
 	{
 		while (start < finish)
-			result[i++] = s1[start++];
+		{
+			result[i] = s1[start];
+			i++;
+			start++;
+		}
 		result[i] = '\0';
 	}
 	return (result);
